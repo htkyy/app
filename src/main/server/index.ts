@@ -13,7 +13,7 @@ interface IServerOptions {
 }
 export function makeServer(domain: Domain, opts: IServerOptions) {
     return new Promise(resolve => {
-        const app = (express as any).default();
+        const app = (express as any)() as express.Express;
 
         if (opts.staticFiles) {
             // the path is just `../`, because after building the entire script is held in main/index.js
